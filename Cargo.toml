@@ -1,0 +1,16 @@
+[package]
+name = "terminator"
+version = "0.1.0"
+authors = ["Michael Gattozzi <mgattozzi@gmail.com>"]
+description = "A small library to have `Display` output for `fn main() -> Result<(), E>`"
+homepage = "https://github.com/mgattozzi/terminator"
+repository = "https://github.com/mgattozzi/terminator"
+documentation = "https://docs.rs/terminator"
+readme = "README.md"
+license = "MPL-2.0"
+
+[dependencies]
+
+[features]
+rust2015 = []
+default = []

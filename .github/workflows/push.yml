@@ -1,0 +1,42 @@
+name: Rust
+
+on: [push]
+
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: "Install minimum supported version"
+      run: rustup install 1.26.0
+    - name: "Build 2018"
+      run: cargo build --example terminator
+    - name: "Switch to minimum version"
+      run: rustup override set 1.26.0
+    - name: "Build 2015"
+      run: cargo build --features rust2015 --example terminator
+  windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: "Install minimum supported version"
+      run: rustup install 1.26.0
+    - name: "Build 2018"
+      run: cargo build --example terminator
+    - name: "Switch to minimum version"
+      run: rustup override set 1.26.0
+    - name: "Build 2015"
+      run: cargo build --features rust2015 --example terminator
+
+#   macOS:
+#     runs-on: macOS-latest
+#     steps:
+#     - uses: actions/checkout@master
+#     - name: "Install minimum supported version"
+#       run: rustup install 1.26.0
+#     - name: "Build 2018"
+#       run: cargo build --example terminator
+#     - name: "Switch to minimum version"
+#       run: rustup override set 1.26.0
+#     - name: "Build 2015"
+#       run: cargo build --features rust2015 --example terminator
