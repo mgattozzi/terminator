@@ -11,6 +11,3 @@ license = "MPL-2.0"
 
 [dependencies]
 
-[features]
-rust2015 = []
-default = []
