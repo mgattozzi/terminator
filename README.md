@@ -57,15 +57,7 @@ fn main() -> Result<(), Terminator> {
 
 ## Minimum version
 We support a minimum `rustc` version of `1.26.0` as this was when the question
-mark in main feature was stabilized. However, for versions less than `1.31.0`
-you'll need to set the feature flag `rust2015` in your `Cargo.toml` like so:
-
-```toml
-[dependencies]
-terminator = { version = "0.1", default-features = false, features = "rust2015" }
-```
-
-This is to get around that `dyn` is required in 2018, while in 2015 it was not.
+mark in main feature was stabilized.
 
 ## License
 
